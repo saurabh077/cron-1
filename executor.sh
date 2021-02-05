@@ -1,10 +1,11 @@
 #!/bin/sh
-echo "Hello World!!!"
 file_name="$1"
-if [ $file_name ]
-then 
-	echo "$file_name present"
-else
-	echo "$file_name not present"
-fi
+bash $file_name
 time $file_name
+if [ $? -eq 0 ]
+then 
+	echo "$file_name executed"
+else
+	echo "$file_name not executed"
+fi
+bash | tee abc.txt
